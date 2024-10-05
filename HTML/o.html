@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include FontAwesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-...your-sha512-hash-here..." crossorigin="anonymous" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('z.jpg'); /* Set your background image here */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .registration-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .registration-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            width: calc(100% - 24px);
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="file"]:focus {
+            border-color: #007bff;
+        }
+
+        input[type="submit"] {
+            padding: 14px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, opacity 0.3s ease;
+            background-color: transparent;
+            color: #007bff;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #007bff;
+            color: #fff;
+            opacity: 1;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .signup-link {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            color: #0056b3;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            color: #0056b3;
+        }
+
+        .signup-link a:hover,
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="registration-container">
+        <h1>Register Now</h1>
+        <form id="registrationForm" action="#">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Your Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="profile">Select Profile:</label>
+                <input type="file" id="profile" name="profile" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+        <div class="signup-link">
+            Already have an account? <a href="login.html">Login</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the values of name, email, password, confirm password, and profile fields
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var profile = document.getElementById("profile").value;
+
+            // Perform your validation checks here
+
+            // If validation passes, you can proceed with further actions like submitting the form or AJAX request
+            // For now, I'm redirecting to a success page
+            window.location.href = "success.html";
+            let toggleBtn = document.getElementById('toggle-btn');
+let body = document.body;
+let darkMode = localStorage.getItem('dark-mode');
+
+const enableDarkMode = () =>{
+   toggleBtn.classList.replace('fa-sun', 'fa-moon');
+   body.classList.add('dark');
+   localStorage.setItem('dark-mode', 'enabled');
+}
+
+const disableDarkMode = () =>{
+   toggleBtn.classList.replace('fa-moon', 'fa-sun');
+   body.classList.remove('dark');
+   localStorage.setItem('dark-mode', 'disabled');
+}
+
+if(darkMode === 'enabled'){
+   enableDarkMode();
+}
+
+toggleBtn.onclick = (e) =>{
+   darkMode = localStorage.getItem('dark-mode');
+   if(darkMode === 'disabled'){
+      enableDarkMode();
+   }else{
+      disableDarkMode();
+   }
+}
+
+let profile = document.querySelector('.header .flex .profile');
+
+document.querySelector('#user-btn').onclick = () =>{
+   profile.classList.toggle('active');
+   search.classList.remove('active');
+}
+
+let search = document.querySelector('.header .flex .search-form');
+
+document.querySelector('#search-btn').onclick = () =>{
+   search.classList.toggle('active');
+   profile.classList.remove('active');
+}
+
+let sideBar = document.querySelector('.side-bar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+   sideBar.classList.toggle('active');
+   body.classList.toggle('active');
+}
+
+document.querySelector('#close-btn').onclick = () =>{
+   sideBar.classList.remove('active');
+   body.classList.remove('active');
+}
+
+window.onscroll = () =>{
+   profile.classList.remove('active');
+   search.classList.remove('active');
+
+   if(window.innerWidth < 1200){
+      sideBar.classList.remove('active');
+      body.classList.remove('active');
+   }
+}
+        });
+    </script>
+</body>
+
+</html>

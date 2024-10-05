@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include FontAwesome library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-...your-sha512-hash-here..." crossorigin="anonymous" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('z.jpg');
+            /* Set your background image here */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 24px);
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 14px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, opacity 0.3s ease;
+            background-color: transparent;
+            color: #007bff;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #007bff;
+            color: #fff;
+            opacity: 1;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .signup-link {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            color: #0056b3;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            color: #0056b3;
+        }
+
+        .signup-link a:hover,
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .social-login {
+            margin-top: 20px;
+        }
+
+        .social-login a {
+            text-decoration: none;
+        }
+
+        .social-login button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            background-color: transparent;
+            color: #0e0e0e;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+        }
+
+        .social-login button:hover {
+            background-color: #f3f7fc;
+            color: #fff;
+            opacity: 1;
+        }
+
+        .social-login button.google {
+            background-color: #ffffff;
+        }
+
+        .social-login button.facebook {
+            background-color: #ffffff;
+        }
+
+        .social-login button.google:hover {
+            background-color: #DB4437;
+        }
+
+        .social-login button.facebook:hover {
+            background-color: #3B5998;
+        }
+
+        .social-login button i {
+            margin-right: 5px;
+        }
+
+        /* New CSS for image */
+        .left-side {
+            width: 50%;
+            background-image: url('v.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .right-side {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm" action="#">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="rememberMe">
+                <label for="rememberMe">Remember Me</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+        <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+        </div>
+        <div class="signup-link">
+            Don't have an account? <a href="signup.html">Sign Up</a>
+        </div>
+        <div class="social-login">
+            <a
+                href="https://accounts.google.com/v3/signin/identifier?hl=en-gb&ifkv=ARZ0qKIkjuqk7JDV6ewY0WBs_noqm7xngw03Pa9od9vv2G5CIV0pxfeH19Sz215QK6SJpdBvDOAJAw&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S1459707458%3A1712922216539544&theme=mn&ddm=0"><button
+                    class="google"><i class="fab fa-google"></i>Login with Google</button></a>
+            <a href="https://www.facebook.com/login/"><button class="facebook"><i class="fab fa-facebook-f"></i>Login
+                    with Facebook</button></a>
+        </div>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the values of username, email, and password fields
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            window.location.href = "courses.html";
+        });
+    </script>
+</body>
+
+</html>

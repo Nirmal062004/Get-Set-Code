@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> <!-- Include Google Font -->
+    <style>
+        /* Additional CSS styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #5e35b1;
+            border: 2px solid #512da8;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .site-name {
+            color: #ffffff;
+            font-size: 24px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif; /* Apply Google Font */
+        }
+        .search-bar {
+            flex: 0.5; /* Reduced size */
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .search-bar input[type="text"]:focus {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-bar input[type="submit"] {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #512da8;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-bar input[type="submit"]:hover {
+            background-color: #4527a0;
+        }
+
+        .menu-bar {
+            display: flex;
+            align-items: center;
+        }
+        
+        
+        .menu-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+
+        .site-name {
+            color: #ffffff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .level-options span {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .level-options span:hover {
+            transform: scale(1.1); /* Zoom in effect on hover */
+        }
+
+        .card h2 {
+            color: #512da8;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .container {
+            background-color: #fff;
+            padding: 16px 20px 6px 0;
+        }
+      
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+      
+        @media (max-width: 991px) {
+            .row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+        }
+      
+        .column {
+            display: flex;
+            flex-direction: column;
+            line-height: normal;
+            width: 50%;
+            margin-left: 0;
+        }
+      
+        @media (max-width: 991px) {
+            .column {
+                width: 100%;
+            }
+        }
+      
+        .hero-image {
+            aspect-ratio: 1.5;
+            object-fit: cover;
+            width: 100%;
+            margin-top: 76px;
+            flex-grow: 1;
+        }
+      
+        @media (max-width: 991px) {
+            .hero-image {
+                max-width: 100%;
+                margin-top: 40px;
+            }
+        }
+      
+        .content-column {
+            display: flex;
+            flex-direction: column;
+            line-height: normal;
+            width: 50%;
+            margin-left: 20px;
+        }
+      
+        @media (max-width: 991px) {
+            .content-column {
+                width: 100%;
+            }
+        }
+      
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #5e35b1;
+            border-radius: 10px;
+            color: white;
+        }
+        .content-wrapper h1{
+            text-align: center;
+        }
+      
+        @media (max-width: 991px) {
+            .content-wrapper {
+                max-width: 100%;
+                margin-top: 40px;
+                padding: 0 20px;
+            }
+        }
+      
+        .description-wrapper {
+            display: flex;
+            margin-top: 45px;
+            flex-direction: column;
+            padding: 0 21px;
+        }
+      
+        @media (max-width: 991px) {
+            .description-wrapper {
+                max-width: 100%;
+                margin-top: 40px;
+                padding: 0 20px;
+            }
+        }
+      
+        .description {
+            color: #000;
+            letter-spacing: -0.26px;
+            font: 400 24px/36px Inter, sans-serif;
+        }
+      
+        @media (max-width: 991px) {
+            .description {
+                max-width: 100%;
+            }
+        }
+      
+        .icon-wrapper {
+            align-self: flex-start;
+            display: flex;
+            margin-top: 18px;
+            align-items: center;
+            gap: 12px;
+        }
+      
+        .icon-html {
+            aspect-ratio: 1.18;
+            object-fit: contain;
+            width: 67px;
+            align-self: stretch;
+            margin: auto 0;
+        }
+      
+        .icon-css {
+            aspect-ratio: 1.02;
+            object-fit: contain;
+            width: 56px;
+            align-self: stretch;
+            margin: auto 0;
+        }
+      
+        .icon-js {
+            aspect-ratio: 1.43;
+            object-fit: contain;
+            width: 98px;
+            align-self: stretch;
+        }
+        .description-wrapper
+        {
+        background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="header">
+        <a href="#" class="site-name">Get Set Code</a>
+        <div class="search-bar">
+            <form action="#" method="GET">
+                <input type="text" name="search" placeholder="Search...">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+        <div class="menu-bar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dde80edeaddc8e14468bb80193f1e3ae808b4a7ea1bbf2708fe1d43b32929711?apiKey=00f96c8ee80040cd969e5bf52abf0e09" alt="Hero image" class="hero-image" />
+            </div>
+            <div class="content-column">
+                <div class="content-wrapper">
+                    <h1 class="title"> Cascading Style Sheets</h1>
+                    <div class="description-wrapper">
+                        <p class="description">
+                            CSS styles web pages by selecting HTML elements and defining their appearance, layout, and design. It's essential for creating visually appealing and structured websites.
+                            <br />
+                             <!-- It includes basic tags for structure, forms for user input, semantic tags for meaning, and tables for organizing data. -->
+                            <br />
+                            <br />
+                           <b> CSS is a stylesheet language used for styling web pages:</b>
+                            <br />
+                            1] Selectors: Define patterns to select elements for styling.
+                            <br />
+                            2] Box Model: Describes the layout of elements, including content, padding, border, and margin.
+                            <br />
+                            3] Layout: Techniques like floats, positioning, flexbox, and grid are used to create various layout designs.
+                            <br />
+                            4] Responsive Design: Ensures web pages adapt to different devices and screen sizes using techniques like media queries.
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </p>
+                        <div class="icon-wrapper">
+                            <a href="https://online.flippingbook.com/view/1054080582/" target="_blank" aria-label="HTML">
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/790bb731a783de241afc502945469db55910a64b9c77ad5a6caa9454561e39a4?apiKey=00f96c8ee80040cd969e5bf52abf0e09" alt="HTML icon" class="icon-html" />
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=HcOc7P5BMi4" target="_blank" aria-label="CSS">
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/872818a1f6cd35821dce59d01e003731f896e09f7ec0bbf2d2570f4948e4d9a7?apiKey=00f96c8ee80040cd969e5bf52abf0e09" alt="CSS icon" class="icon-css" />
+                            </a>
+                            <a href="https://codingfantasy.com/" target="_blank" aria-label="JavaScript">
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b5c40da24b5b5d3008602bdabc9c7aa92cd87509a7c0f4b631049f5894a9596a?apiKey=00f96c8ee80040cd969e5bf52abf0e09" alt="JavaScript icon" class="icon-js" />
+                            </a>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

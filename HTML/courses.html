@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>courses</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="D:\DEVENDRA\VS Code\pbl\css\style.css">
+   <style>.roadmap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+   }
+   
+   .card {
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      position: relative;
+      background-color: white;
+      /* Add this line */
+   }
+   
+   
+   .card:hover {
+      transform: translateY(-5px) rotateX(10deg);
+      /* Rotate card slightly on hover for 3D effect */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+   }
+   
+   .level-options {
+      color: #5e35b1;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      /* Add margin bottom for spacing */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      /* Align to the left */
+   }
+   
+   .level-options span {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+   }
+   
+   card p {
+      color: hsl(0, 0%, 100%);
+      font-size: 16px;
+      line-height: 1.5;
+   }
+   
+   .level-options span:hover {
+      transform: scale(1.1);
+      /* Zoom in effect on hover */
+   }
+   
+   .card h2 {
+      color: #512da8;
+      font-size: 24px;
+      margin-bottom: 10px;
+   }
+   </style>
+</head>
+
+<body>
+
+   <header class="header">
+
+      <section class="flex">
+
+         <a href="index.html" class="logo">Get Set Code</a>
+
+         <form action="search.html" method="post" class="search-form">
+            <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+            <button type="submit" class="fas fa-search"></button>
+         </form>
+
+         <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="toggle-btn" class="fas fa-sun"></div>
+         </div>
+
+         <div class="profile">
+            <img src="D:\DEVENDRA\VS Code\PBL\images\pic-1.jpg" class="image" alt="">
+            <h3 class="name">Devendra Ahire</h3>
+            <p class="role">dev10</p>
+            <a href="profile.html" class="btn">view profile</a>
+            <div class="flex-btn">
+               <a href="login.html" class="option-btn">login</a>
+               <a href="o.html" class="option-btn">register</a>
+            </div>
+         </div>
+
+      </section>
+
+   </header>
+
+   <div class="side-bar">
+
+      <div id="close-btn">
+         <i class="fas fa-times"></i>
+      </div>
+
+      <div class="profile">
+         <img src="D:\DEVENDRA\VS Code\PBL\images\pic-1.jpg" class="image" alt="">
+         <h3 class="name">Devendra Ahire </h3>
+         <p class="role">Dev10</p>
+         <a href="profile.html" class="btn">view profile</a>
+      </div>
+
+      <nav class="navbar">
+         <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+         <a href="about.html"><i class="fas fa-question"></i><span>About</span></a>
+         <!-- <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>courses</span></a> -->
+         <!-- <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a> -->
+         <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
+      </nav>
+
+   </div>
+   <div class="container">
+      <div class="roadmap">
+         <!-- Roadmap cards -->
+         <div class="card">
+            <h2>HTML & CSS</h2>
+            <p>Learn the basics of HTML and CSS to create static web pages.</p>
+            <div class="level-options">
+               <span class="beginner">
+                   <a href="1html.html">Beginner</a>
+               </span>
+               <span class="intermediate">
+                   <a href="2html.html">Intermediate</a>
+               </span>
+               <span class="advanced">
+                   <a href="3html.html">Advanced</a>
+               </span>
+           </div>                     
+         </div>
+         <div class="card">
+            <h2>JavaScript</h2>
+            <p>Start with JavaScript to add interactivity to your websites.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <!-- Add more cards here -->
+         <div class="card">
+            <h2>Frontend Frameworks</h2>
+            <p>Explore popular frontend frameworks like React, Angular, or Vue.js.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>Python Programming</h2>
+            <p>Learn Python, a powerful and versatile programming language.</p>
+            <div class="level-options">
+               <span class="beginner"><a href="1python.html"></a>Beginner</span>
+               <span class="intermediate"><a href="2python.html"></a>Intermediate</span>
+               <span class="advanced"><a href="3python.html"></a>Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>Java Programming</h2>
+            <p>Start with Java, a widely used object-oriented programming language.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>C++ Programming</h2>
+            <p>Explore C++, a fast and efficient programming language.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>Web Development Bootcamp</h2>
+            <p>Get hands-on experience with a comprehensive web development bootcamp.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>Data Science Essentials</h2>
+            <p>Learn essential skills and tools for data science and analytics.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>Mobile App Development with Flutter</h2>
+            <p>Build beautiful native apps for iOS and Android with Flutter.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>Game Development with Unity</h2>
+            <p>Create interactive games and experiences with Unity.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>Backend Development with Node.js</h2>
+            <p>Build scalable and efficient backend systems with Node.js.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>Machine Learning Fundamentals</h2>
+            <p>Discover the basics of machine learning and its applications.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>Artificial Intelligence Essentials</h2>
+            <p>Explore the fundamentals of artificial intelligence and its impact.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>Cloud Computing Basics</h2>
+            <p>Understand cloud computing concepts and services.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>DevOps Fundamentals</h2>
+            <p>Learn about DevOps practices for faster software delivery.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+         <div class="card">
+            <h2>Databases and SQL</h2>
+            <p>Master database management and SQL for efficient data handling.</p>
+            <div class="level-options">
+               <span class="beginner">Beginner</span>
+               <span class="intermediate">Intermediate</span>
+               <span class="advanced">Advanced</span>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <script>
+      // JavaScript for redirecting to searched card
+      document.querySelector('.search-bar form').addEventListener('submit', function (event) {
+         event.preventDefault(); // Prevent form submission
+         let searchQuery = document.querySelector('.search-bar input[type="text"]').value.toLowerCase();
+         let cards = document.querySelectorAll('.card');
+         cards.forEach(function (card) {
+            let cardTitle = card.querySelector('h2').innerText.toLowerCase();
+            if (cardTitle.includes(searchQuery)) {
+               card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+         });
+      });
+      document.querySelectorAll('.level-options span').forEach(function (level) {
+         level.addEventListener('click', function () {
+            let levelText = this.innerText.toLowerCase();
+            switch (levelText) {
+               case 'beginner':
+                  window.location.href = 'beginner.html';
+                  break;
+               case 'intermediate':
+                  window.location.href = 'intermediate.html';
+                  break;
+               case 'advanced':
+                  window.location.href = 'advanced.html';
+                  break;
+               default:
+                  break;
+            }
+         });
+      });
+
+   </script>
+
+   <footer class="footer">
+
+    @ 2024 by <span>Get Set Code</span> all rights reserved!
+   </footer>
+
+   <!-- custom js file link  -->
+   <script>let toggleBtn = document.getElementById('toggle-btn');
+      let body = document.body;
+      let darkMode = localStorage.getItem('dark-mode');
+      
+      const enableDarkMode = () =>{
+         toggleBtn.classList.replace('fa-sun', 'fa-moon');
+         body.classList.add('dark');
+         localStorage.setItem('dark-mode', 'enabled');
+      }
+      
+      const disableDarkMode = () =>{
+         toggleBtn.classList.replace('fa-moon', 'fa-sun');
+         body.classList.remove('dark');
+         localStorage.setItem('dark-mode', 'disabled');
+      }
+      
+      if(darkMode === 'enabled'){
+         enableDarkMode();
+      }
+      
+      toggleBtn.onclick = (e) =>{
+         darkMode = localStorage.getItem('dark-mode');
+         if(darkMode === 'disabled'){
+            enableDarkMode();
+         }else{
+            disableDarkMode();
+         }
+      }
+      
+      let profile = document.querySelector('.header .flex .profile');
+      
+      document.querySelector('#user-btn').onclick = () =>{
+         profile.classList.toggle('active');
+         search.classList.remove('active');
+      }
+      
+      let search = document.querySelector('.header .flex .search-form');
+      
+      document.querySelector('#search-btn').onclick = () =>{
+         search.classList.toggle('active');
+         profile.classList.remove('active');
+      }
+      
+      let sideBar = document.querySelector('.side-bar');
+      
+      document.querySelector('#menu-btn').onclick = () =>{
+         sideBar.classList.toggle('active');
+         body.classList.toggle('active');
+      }
+      
+      document.querySelector('#close-btn').onclick = () =>{
+         sideBar.classList.remove('active');
+         body.classList.remove('active');
+      }
+      
+      window.onscroll = () =>{
+         profile.classList.remove('active');
+         search.classList.remove('active');
+      
+         if(window.innerWidth < 1200){
+            sideBar.classList.remove('active');
+            body.classList.remove('active');
+         }
+      }</script>
+
+
+</body>
+
+</html>
